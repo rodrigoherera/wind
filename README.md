@@ -22,13 +22,13 @@ Wind is inspired by [air](https://github.com/air-verse/air) but focused specific
 ### Via `go install` (Recommended)
 
 ```bash
-go install github.com/your-username/wind@latest
+go install github.com/rodrigoherera/wind@latest
 ```
 
 ### Build from source
 
 ```bash
-git clone https://github.com/your-username/wind.git
+git clone https://github.com/rodrigoherera/wind.git
 cd wind
 go build -o wind .
 ```
@@ -259,7 +259,7 @@ The test suite covers:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/wind.git
+git clone https://github.com/rodrigoherera/wind.git
 cd wind
 
 # Run tests to ensure everything works
