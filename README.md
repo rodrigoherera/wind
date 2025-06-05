@@ -212,9 +212,77 @@ go build .
 
 Fix any compilation errors before running Wind.
 
+## Development & Testing
+
+Wind includes a comprehensive test suite to ensure reliability and performance.
+
+### Running Tests
+
+Wind comes with a full test suite including unit tests, integration tests, and benchmarks:
+
+```bash
+# Run all tests (unit + integration)
+./test.sh
+
+# Run only unit tests (fast)
+./test.sh --unit-only
+
+# Run only integration tests
+./test.sh --integration-only
+
+# Run performance benchmarks
+./test.sh --benchmarks
+
+# Generate test coverage report
+./test.sh --coverage
+
+# Run everything (tests, benchmarks, coverage)
+./test.sh --all
+
+# Verbose output
+./test.sh --verbose
+
+# Show help
+./test.sh --help
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- **Unit Tests**: Project structure detection, file filtering, change detection
+- **Integration Tests**: Real file operations, complete workflows, error handling
+- **Benchmark Tests**: Performance testing with various file counts
+- **Performance Metrics**: File scanning ~97µs, change detection ~93µs
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/wind.git
+cd wind
+
+# Run tests to ensure everything works
+./test.sh
+
+# Build the binary
+go build -o wind .
+
+# Test with the example app
+cd example
+../wind init
+```
+
+All test results are saved in `test-results/` (ignored by git) for detailed analysis.
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please:
+
+1. Run the full test suite: `./test.sh --all`
+2. Ensure all tests pass
+3. Add tests for new features
+4. Submit a Pull Request
 
 ## License
 

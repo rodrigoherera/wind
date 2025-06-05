@@ -187,10 +187,69 @@ Info: Current directory: /path/to/your-api
 Success: Application started (PID: 12346)
 ```
 
+## Development & Testing
+
+Wind includes a comprehensive test suite for reliability and performance testing.
+
+### Running the Test Suite
+
+```bash
+# Run all tests (quick)
+./test.sh
+
+# Run with benchmarks and coverage
+./test.sh --all
+
+# Run only unit tests (fastest)
+./test.sh --unit-only
+
+# Generate test coverage report
+./test.sh --coverage
+```
+
+### Test Output Example
+
+```
+██╗    ██╗██╗███╗   ██╗██████╗     ████████╗███████╗███████╗████████╗
+██║    ██║██║████╗  ██║██╔══██╗    ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝
+██║ █╗ ██║██║██╔██╗ ██║██║  ██║       ██║   █████╗  ███████╗   ██║
+██║███╗██║██║██║╚██╗██║██║  ██║       ██║   ██╔══╝  ╚════██║   ██║
+╚███╔███╔╝██║██║ ╚████║██████╔╝       ██║   ███████╗███████║   ██║
+ ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝        ╚═╝   ╚══════╝╚══════╝   ╚═╝
+
+✓ Go version: go version go1.23.4 darwin/arm64
+✓ Unit tests: PASSED
+✓ Integration tests: PASSED
+✓ Build test: PASSED
+✓ All tests completed successfully!
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- **Project structure detection** for all supported layouts
+- **File watching and change detection** with real file operations
+- **Performance benchmarks** with various file counts
+- **Error handling** and edge cases
+- **Complete workflow testing** from detection to build
+
+### Benchmark Results
+
+```
+BenchmarkScanFiles-10              12164      97533 ns/op
+BenchmarkCheckForChanges-10        12810      93763 ns/op
+BenchmarkDetectProjectStructure-10  1421594    855.3 ns/op
+```
+
+Performance is excellent: scanning 50 files takes ~97µs, making Wind very responsive.
+
 ## Next Steps
 
 - Try Wind with your own Go web applications
+- Run the test suite to verify everything works: `./test.sh`
 - Experiment with different file types (HTML, CSS, JS)
 - Test with cmd/api/, cmd/, or root main.go structures
 - Check out the source code to understand how it works
+- Run benchmarks to see performance: `./test.sh --benchmarks`
 - Consider contributing features or improvements

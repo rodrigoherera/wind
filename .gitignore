@@ -1,2 +1,20 @@
 /.DS_Store
 /tmp
+
+# Test output files and directories
+/test-results/
+*.test
+*.out
+coverage.html
+coverage.txt
+coverage.out
+
+# Temporary test files
+wind-test*
+*_test_tmp*
+
+# Benchmark output
+bench-*.log
+
+# Go test cache
+.test/
